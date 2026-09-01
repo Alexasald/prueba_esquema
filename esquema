@@ -1,1 +1,25 @@
+```mermaid
+graph LR
+    Cliente["<b>Cliente</b><br/>Navegador web"]
+    BD[("<b>Base de datos</b>")]
 
+    subgraph Servidor["Servidor (MVC) - Monolito modular - lógica de negocio"]
+        style Servidor fill:#eaf2f8,stroke:#1b6288,stroke-width:2px,color:#000
+        
+        Controlador["<b>Controlador</b>"]
+        Modelo["<b>Modelo</b>"]
+        Vista["<b>Vista</b>"]
+    end
+
+    Cliente --> Servidor
+    Controlador --> Modelo
+    Controlador --> Vista
+    Modelo --> Vista
+    Servidor --> BD
+
+    style Cliente fill:#5a5a5a,color:#fff,stroke:#333
+    style BD fill:#a0381e,color:#fff,stroke:#333
+    style Controlador fill:#0d6e53,color:#fff,stroke:#333
+    style Modelo fill:#0d6e53,color:#fff,stroke:#333
+    style Vista fill:#0d6e53,color:#fff,stroke:#333
+```
